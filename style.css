@@ -22,6 +22,8 @@ nav {
     padding: 2vw 10.4vw;
     justify-content: space-between;
     cursor: pointer;
+    background-color: #111;
+    z-index: 10;
 }
 nav h1{
     font-size: 1.6vw;
@@ -122,6 +124,57 @@ nav button svg {
 #page1-services h4:nth-last-child(2){
     border: none;
     padding: 2px;
+}
+
+#moving-div{
+    margin-top: 10vh;
+    position: absolute;
+    bottom: 3%;
+    white-space: nowrap;
+    width: 44%;
+    padding: 1.2vw; 
+    overflow: hidden;
+}
+
+#moving-div .move{
+    display: inline-block;
+    animation-name: movinganimation;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#moving-div .move img{
+    margin: 0 1.2vw;
+    /* height: 1.5vw; */
+}
+
+#blur-left {
+    height: 100%;
+    width: 20%;
+    position: absolute;
+    background: linear-gradient(to right,#111, transparent);
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+#blur-right {
+    height: 100%;
+    width: 20%;
+    position: absolute;
+    background: linear-gradient(to right,transparent, #111);
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+@keyframes  movinganimation{
+    0%{
+        transform: translateX(0);
+    }  
+    100%{
+        transform: translateX(-100%);
+    } 
 }
 
 #page1-services h4{
